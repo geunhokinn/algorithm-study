@@ -14,7 +14,7 @@ class Node{
 
 public class Main {
     Node root;
-    public void DFS(Node root) {
+    public void BFS(Node root) {
         Queue<Node> q = new LinkedList<>();
         q.offer(root);
         int L=0;
@@ -41,6 +41,6 @@ public class Main {
         tree.root.lt.rt = new Node(5);
         tree.root.rt.lt = new Node(6);
         tree.root.rt.rt = new Node(7);
-        tree.DFS(tree.root);
+        tree.BFS(tree.root);
     }
 }
