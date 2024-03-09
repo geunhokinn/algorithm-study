@@ -6,7 +6,7 @@ public class Main {
     static int n, m, answer=0;
     static int[][] graph;
     static int[] ch;
-    public int DFS(int v){
+    public void DFS(int v){
         if(v==n) answer++;
         else{
             for(int i=1; i<=n; i++){
@@ -17,7 +17,6 @@ public class Main {
                 }
             }
         }
-        return answer;
     }
 
     public static void main(String[] args) {
