@@ -3,8 +3,7 @@ package inflearn._10_dynamic_programming._05_동전교환;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class
-Main {
+public class Main {
     static int n, m;
     static int[] dy;
     public int solution (int[] arr) {
