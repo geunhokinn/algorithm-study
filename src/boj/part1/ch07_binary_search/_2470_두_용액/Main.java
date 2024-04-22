@@ -3,6 +3,28 @@ package boj.part1.ch07_binary_search._2470_두_용액;
 import java.util.Arrays;
 import java.util.Scanner;
 
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int[] arr= new int[n];
+//        int optimalAbsSum = Integer.MAX_VALUE;
+//        int optimalFirstValue = -1;
+//        int optimalSecondValue = -1;
+//        for (int i=0; i<n; i++) {
+//            for (int j=i+1; j<n; j++) {
+//                int absSum = Math.abs(arr[i] + arr[j]);
+//                if (optimalAbsSum > absSum) {
+//                    optimalAbsSum = absSum;
+//                    optimalFirstValue = 0;
+//                    optimalSecondValue = 0;
+//                }
+//            }
+//        }
+//        System.out.println(optimalFirstValue + " " + optimalSecondValue);
+//    }
+//}
+
 public class Main {
     static int findOptimalValue(int[] arr, int value, int startIdx, int endIdx) {
         int l = startIdx, r = endIdx;
@@ -34,15 +56,15 @@ public class Main {
         Arrays.sort(arr);
 
         // 2. 각 용액에 대해 0과 가까운 최적이 되는 용액을 이분 탐색을 통해 찾는다.
-        int optimalBestSum = Integer.MAX_VALUE;
+        int optimalSum = Integer.MAX_VALUE;
         int optimalFirstValue = -1;
         int optimalSecondValue = -1;
         for (int i=0; i<n-1; i++) {
             int optimalValue = findOptimalValue(arr, arr[i],i+1, n-1);
             // 3. 각 용액 중 가장 작은 값이 되는 최적이 되는 용액을 찾는다.
             int optimalAbsSum = Math.abs(arr[i] + optimalValue);
-            if(optimalBestSum > optimalAbsSum) {
-                optimalBestSum = optimalAbsSum;
+            if(optimalSum > optimalAbsSum) {
+                optimalSum = optimalAbsSum;
                 optimalFirstValue = arr[i];
                 optimalSecondValue = optimalValue;
             }
