@@ -15,14 +15,14 @@ public class Main {
             sum += arr[i];
         }
 
-        int l = 0, r = 0, ans = 0, leftValue = 0, rightValue = arr[l];
+        int l = 0, r = 0, ans = 0, leftValue = 0, rightValue = 0;
         while (true) {
             leftValue = sum - rightValue;
             ans = Integer.max(ans, Integer.min(rightValue, leftValue));
             if (rightValue <= leftValue) {
-                r++;
                 if(r == n) break;
                 rightValue += arr[r];
+                r++;
             } else {
                 rightValue -= arr[l];
                 l++;
