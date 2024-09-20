@@ -9,12 +9,11 @@ public class Main {
         dy[0] = 1;
         int ans = 1;
         for (int i=1; i<n; i++) {
-            int max = 0;
+            dy[i] = 1;
             for (int j=0; j<i; j++) {
-                if (arr[j] < arr[i] && dy[j] > max) {
-                    max = dy[i];
+                if (arr[j] < arr[i] && dy[j]+1 > dy[i]) {
+                    dy[i] = dy[j]+1;
                 }
-                dy[i] = max + 1;
             }
             if (ans < dy[i]) ans = dy[i];
         }
