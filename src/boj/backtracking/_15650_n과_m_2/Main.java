@@ -20,7 +20,7 @@ class Main {
                 if(ch[i] == 0) {
                     ch[i] = 1;
                     ans[L] = i+1;
-                    DFS(i+1, L+1);
+                    DFS(i, L+1);
                     ch[i] = 0;
                 }
 
